@@ -2,7 +2,7 @@
 use 5.006001;
 use ExtUtils::MakeMaker;
 
-# $Id: Makefile.PL,v 1.1 2003/02/22 02:18:25 sander Exp $
+# $Id: Makefile.PL,v 1.5 2005/11/20 03:57:01 sander Exp $
   
 sub MY::postamble {
                                      
@@ -11,10 +11,10 @@ ck_version :
 	@perl -MExtUtils::MakeMaker -le 'print "Version: " . MM->parse_version(shift)' $(VERSION_FROM)
 
 cvs_export :
-	cvs export -r$(NAME_SYM)_$(VERSION_SYM) -d$(DISTVNAME) $(CVS_PACKAGE)
+	cvs export -rcpan_$(NAME_SYM)_$(VERSION_SYM) -d$(DISTVNAME) $(CVS_PACKAGE)
   
 cvs_tag :
-	cvs tag $(NAME_SYM)_$(VERSION_SYM) .
+	cvs tag cpan_$(NAME_SYM)_$(VERSION_SYM) .
 	@echo tagged all files with $(NAME_SYM)_$(VERSION_SYM)
     
 EOT
@@ -32,6 +32,7 @@ WriteMakefile(
        AUTHOR     => 'Sander van Zoest <svanzoest@cpan.org>') : ()),
     'LIBS'		=> ['-L/usr/local/lib -lstdc++ -lm -lmusicbrainz'], 
     'DEFINE'		=> '', # e.g., '-DHAVE_SOMETHING'
+    'CCFLAGS'           => '',
 	# Insert -I. if you add *.h files later:
     'INC'		=> '-I/usr/local/include -I.',
     'dist'              => {

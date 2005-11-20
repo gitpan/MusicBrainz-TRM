@@ -3,8 +3,12 @@ Revision history for Perl extension MusicBrainz::TRM.
 All changes by Sander van Zoest <svanzoest@cpan.org> unless 
 otherwise noted.
 
-$Id: Changes,v 1.1 2003/02/22 02:18:25 sander Exp $
+$Id: Changes,v 1.4 2005/11/20 03:57:01 sander Exp $
 
+0.02  Sun Nov 20 03:54:19 2005
+	- Fixed integer size issue when perl is compiled with -Duse64bitint
+	- Fixed return on finalize_signature() [Peter Winton]
+	- Fixed a compile time warning [Tom Heady]
 
 0.01  Fri Feb 21 16:21:40 2003
 	- original version; created by h2xs 1.22 with options

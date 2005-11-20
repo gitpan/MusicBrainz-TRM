@@ -1,4 +1,4 @@
-# $Id: MANIFEST,v 1.1 2003/02/22 02:18:25 sander Exp $
+# $Id: MANIFEST,v 1.2 2005/11/20 04:00:20 sander Exp $
 Changes
 Makefile.PL
 MANIFEST
@@ -7,3 +7,4 @@ TRM.pm
 TRM.xs
 typemap
 t/1.t
+META.yml                                 Module meta-data (added by MakeMaker)
